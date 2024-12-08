@@ -77,15 +77,6 @@ func findStartingPosition(grid *Grid) Position {
 	return Position{}
 }
 
-func makeGridCopy(grid *Grid) *Grid {
-	cells := make([][]rune, grid.rows)
-	for y := 0; y < grid.rows; y++ {
-		cells[y] = make([]rune, grid.cols)
-		copy(cells[y], grid.cells[y])
-	}
-	return &Grid{cells, grid.rows, grid.cols}
-}
-
 func findUniquePositions(grid *Grid) int {
 	pos := findStartingPosition(grid)
 
